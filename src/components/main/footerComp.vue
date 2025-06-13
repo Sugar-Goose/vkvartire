@@ -2,17 +2,17 @@
     <div class="container">
         <div class="text__wrapper">
             <div class="header__wrapper">
-                <h5>Что можно сделать сейчас</h5>
-                <p class="text_xl_regular">Проект сейчас в разработке. Мы активно тестируем идею, собираем мнения, проверяем гипотезы и слушаем будущих пользователей — </p>
+                <h5>{{ headerTitle }}</h5>
+                <p class="text_xl_regular">{{ headerText }}</p>
             </div>
-            <h6 class="cta__text">Чтобы в 2026 году запустить платформу, которая действительно будет помогать.</h6>
+            <h6 class="cta__text">{{ ctaText }}</h6>
         </div>
         <div class="cta__wrapper">
             <div class="cta__text__wrapper">
-                <h6>Пройди короткий опрос в Telegram</h6>
-                <p class="text_lg_regular">Это займёт 2 минуты, но реально поможет нам создать лучший сервис. Ты можешь повлиять на то, какие стили и решения попадут в каталог, какие функции будут первыми, и какие ошибки мы сможем избежать.</p>
+                <h6>{{ ctaTitle }}</h6>
+                <p class="text_lg_regular">{{ ctaDescription }}</p>
             </div>
-            <a href="#" class="cta__button text_lg_meduim">Хочу дизайн без боли и переплат</a>
+            <a href="#" class="cta__button text_lg_meduim">{{ buttonText }}</a>
         </div>
         <img class="Vector" src="../../assets/Vector.png">
     </div>
@@ -20,7 +20,33 @@
 
 <script>
 export default {
-    name: "footerComp"
+    name: "footerComp",
+    props: {
+        headerTitle: {
+            type: String,
+            default: "Что можно сделать сейчас",
+        },
+        headerText: {
+            type: String,
+            default: "Проект сейчас в разработке. Мы активно тестируем идею, собираем мнения, проверяем гипотезы и слушаем будущих пользователей —",
+        },
+        ctaText: {
+            type: String,
+            default: "Чтобы в 2026 году запустить платформу, которая действительно будет помогать.",
+        },
+        ctaTitle: {
+            type: String,
+            default: "Пройди короткий опрос в Telegram",
+        },
+        ctaDescription: {
+            type: String,
+            default: "Это займёт 2 минуты, но реально поможет нам создать лучший сервис. Ты можешь повлиять на то, какие стили и решения попадут в каталог, какие функции будут первыми, и какие ошибки мы сможем избежать.",
+        },
+        buttonText: {
+            type: String,
+            default: "Хочу дизайн без боли и переплат",
+        },
+    },
 };
 </script>
 
@@ -39,7 +65,7 @@ export default {
 
 .Vector {
     position: absolute;
-    top:0;
+    top: 0;
     z-index: 0;
 }
 
@@ -70,7 +96,7 @@ export default {
     z-index: 1;
 }
 
- .cta__button {
+.cta__button {
     display: flex;
     padding: 16px 20px;
     justify-content: center;
@@ -80,15 +106,22 @@ export default {
     background: #915;
     width: fit-content;
     text-decoration: none;
- }
+    transition: all 0.25s;
+}
 
- .cta__text__wrapper {
+.cta__button:hover {
+    background: transparent;
+    color: #915;
+    transition: all 0.25s;
+}
+
+.cta__text__wrapper {
     display: flex;
     flex-direction: column;
     gap: 12px;
- }
+}
 
- @media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
     .container {
         display: flex;
         flex-direction: column;
@@ -104,9 +137,9 @@ export default {
         width: 100%;
         box-sizing: border-box;
     }
- }
+}
 
- @media screen and (max-width: 732px) {
+@media screen and (max-width: 732px) {
     .cta__button {
         text-align: center;
         border-radius: 16px;
@@ -140,5 +173,5 @@ export default {
     .Vector {
         display: none;
     }
- }
+}
 </style>

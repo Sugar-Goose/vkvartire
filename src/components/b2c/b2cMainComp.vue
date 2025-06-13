@@ -1,18 +1,20 @@
 <template>
-  <B2cHeader />
-  <CardsComp :cards="cardData" class="cardsComp">
-    <template #default="{ card }">
-      <div>
-        <img :src="card.image" class="card-image" />
-        <h6>{{ card.title }}</h6>
-        <p class="text_lg_regular">{{ card.text }}</p>
-      </div>
-    </template>
-  </CardsComp>
-  <SpacerComp />
-  <b2cHowWeWork />
-  <SpacerComp />
-  <footerComp />
+  <div class="main__comp__container">
+    <B2cHeader />
+    <CardsComp :cards="cardData" class="cardsComp">
+      <template #default="{ card }">
+        <div>
+          <img :src="card.image" class="card-image" />
+          <h6>{{ card.title }}</h6>
+          <p class="text_lg_regular">{{ card.text }}</p>
+        </div>
+      </template>
+    </CardsComp>
+    <SpacerComp />
+    <b2cHowWeWork />
+    <SpacerComp />
+    <footerComp />
+  </div>
 </template>
 
 <script>
@@ -68,5 +70,9 @@ export default {
   background-color: #f5f5ff;
   padding: 12px;
   border-radius: 16px;
+}
+
+.main__comp__container {
+  padding: 24px;
 }
 </style>

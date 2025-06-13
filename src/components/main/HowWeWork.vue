@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="image__wrapper">
+        <div class="image__wrapper" :style="{ backgroundImage: `url(${backgroundImage})` }">
             <div class="hint__wrapper">
                 <div class="hint__image__container">
                     <img :src="hint.image" width="24" height="24" v-if="hint.image" />
@@ -47,6 +47,10 @@ export default {
             }),
             validator: (hint) => typeof hint.text === "string" && typeof hint.image === "string",
         },
+        backgroundImage: {
+            type: String,
+            default: "../../assets/what_we_do_img.jpg",
+        },
     },
 };
 </script>
@@ -80,8 +84,8 @@ export default {
     align-items: flex-start;
     gap: 8px;
     flex: 1 0 0;
-    background: url(../../assets/what_we_do_img.jpg) lightgray 50% / cover no-repeat;
     border-radius: 32px;
+    background: lightgray 50% / cover no-repeat;
 }
 
 .hint__wrapper {

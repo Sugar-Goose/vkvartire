@@ -1,15 +1,11 @@
 <template>
-  <MainComp />
+  <router-view />
 </template>
 
 <script>
-import MainComp from "./components/MainComp.vue";
 
 export default {
-  name: "App",
-  components: {
-    MainComp,
-  },
+  name: "App"
 };
 </script>
 
@@ -18,6 +14,16 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 * {
   font-family: Tektur;
+}
+
+h2 {
+  color: #181D27;
+  font-family: Tektur;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 92px;
+  margin: 0;
 }
 
 h4 {
@@ -88,7 +94,6 @@ h6 {
 }
 
 body {
-  padding: 24px;
   margin: 0;
   background-color: #f5f5f5;
 }
