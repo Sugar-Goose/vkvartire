@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="footer___container">
         <div class="text__wrapper">
             <div class="header__wrapper">
                 <h5>{{ headerTitle }}</h5>
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.footer___container {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -122,7 +122,7 @@ export default {
 }
 
 @media screen and (max-width: 1280px) {
-    .container {
+    .footer___container {
         display: flex;
         flex-direction: column;
     }
@@ -149,11 +149,12 @@ export default {
         border-radius: 24px;
     }
 
-    .container {
+    .footer___container {
         position: relative;
         display: flex;
         flex-direction: column;
         min-height: 848px;
+        height: fit-content;
         justify-content: space-between;
         padding: 32px;
         border-radius: 48px;
@@ -163,7 +164,7 @@ export default {
         height: fit-content;
     }
 
-    .container {
+    .footer___container {
         border-radius: 32px;
         padding: 16px;
         height: max-content;

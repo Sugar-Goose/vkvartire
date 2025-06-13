@@ -106,4 +106,14 @@ export default {
   padding: 12px;
   border-radius: 16px;
 }
+
+@media screen and (max-width: 915px) {
+  .block_padding_container {
+    padding: 8px;
+  }
+}
+
+.footer___container {
+  min-height: auto;
+}
 </style>

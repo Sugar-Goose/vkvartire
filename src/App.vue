@@ -22,7 +22,6 @@ h2 {
   font-size: 72px;
   font-style: normal;
   font-weight: 600;
-  line-height: 92px;
   margin: 0;
 }
 
@@ -112,6 +111,15 @@ body {
   }
 
   h4 {
+    font-size: 32px;
+  }
+
+  h5 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  h2 {
     font-size: 32px;
   }
 }

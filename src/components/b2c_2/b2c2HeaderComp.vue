@@ -37,6 +37,7 @@
 
     <img class="vector" src="../../assets/b2c2/Vector2.png">
     <img class="IsometricRoom" src="../../assets/b2c2/IsometricRoom.png">
+    <img class="IsometricRoomMobile" src="../../assets/b2c2/IsometricRoomMobile.png">
   </div>
 </template>
 
@@ -47,6 +48,10 @@ export default {
 </script>
 
 <style scoped>
+
+.IsometricRoomMobile {
+  display: none;
+}
 
 .IsometricRoom {
     position: absolute;
@@ -111,5 +116,53 @@ export default {
     box-sizing: border-box;
     background-color: #FFF;
     border-radius: 0px 0px 56px 56px;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .vector {
+    max-width: 100%;
+  }
+
+  .IsometricRoom {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .vector {
+    display: none;
+  }
+
+  .IsometricRoom {
+    display: none;
+  }
+
+  .IsometricRoomMobile {
+    display: block;
+  }
+
+  .container {
+    height: fit-content;
+    gap: 16px;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  .header__text h6 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .filler {
+    display: none;
+  }
+
+  .text_xl_regular {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 </style>

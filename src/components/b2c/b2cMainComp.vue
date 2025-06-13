@@ -75,4 +75,14 @@ export default {
 .main__comp__container {
   padding: 24px;
 }
+
+@media screen and (max-width: 915px) {
+  .footer___container {
+    min-height: 960px;
+  }
+
+  .main__comp__container {
+    padding: 8px;
+  }
+}
 </style>
