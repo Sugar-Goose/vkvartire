@@ -3,7 +3,7 @@
         <div class="text__wrapper">
             <div class="header__wrapper">
                 <h5>{{ headerTitle }}</h5>
-                <p class="text_xl_regular">{{ headerText }}</p>
+                <p class="text_xl_regular" v-html="headerText"></p>
             </div>
             <h6 class="cta__text">{{ ctaText }}</h6>
         </div>
@@ -137,6 +137,12 @@ export default {
     .cta__wrapper {
         width: 100%;
         box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .Vector {
+        display: none;
     }
 }
 

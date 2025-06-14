@@ -155,5 +155,10 @@ export default {
     .text_lg_regular {
         font-size: 16px;
     }
+
+    .container {
+        padding: 16px;
+        border-radius: 32px;
+    }
 }
 </style>

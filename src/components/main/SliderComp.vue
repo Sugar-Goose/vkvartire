@@ -35,30 +35,52 @@
 </template>
 
 <script>
+
+import Slider1 from '../../assets/slider1.jpg'
+import Slider2 from '../../assets/slider2.png'
+import Slider3 from '../../assets/slider3.png'
+
 export default {
   name: 'SliderComp',
+  props: {
+    imageUrls: {
+      type: Array,
+      default: () => [
+        Slider1,
+        Slider2,
+        Slider3
+      ],
+      validator: (urls) => urls.length === 3 && urls.every(url => typeof url === 'string')
+    }
+  },
   data() {
     return {
       numOfSlides: 3,
       slides: [
         {
           title: '',
-          image: 'https://i.ibb.co/DfZBPcFW/slider1.jpg',
-          infoPosition: 'top-left',
-        },
-        {
-          title: '',
           image: 'https://i.ibb.co/SD2Lj15v/slider2.png',
-          infoPosition: 'bottom-right',
+          infoPosition: 'top-left'
         },
         {
           title: '',
-          image: 'https://i.ibb.co/vCcwJJb7/slider3.png',
-          infoPosition: 'bottom-left',
+          image: '',
+          infoPosition: 'bottom-right'
+        },
+        {
+          title: '',
+          image: '',
+          infoPosition: 'bottom-left'
         }
-      ],
+      ]
     };
   },
+  created() {
+    // Обновляем пути к изображениям из пропсов
+    this.slides.forEach((slide, index) => {
+      slide.image = this.imageUrls[index];
+    });
+  }
 };
 </script>
 
@@ -412,16 +434,8 @@ article img {
 }
 
 /*---- RESPONSIVE ----*/
-@media only screen and (max-width: 850px) and (min-width: 450px) {
-  .slider-wrapper {
-    border-radius: 0;
-  }
-}
 
 @media only screen and (max-width: 450px) {
-  .slider-wrapper {
-    border-radius: 0;
-  }
 
   .info {
     opacity: 0;

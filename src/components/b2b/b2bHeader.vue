@@ -13,15 +13,29 @@
         </div>
         <h5>Конкретные интерьеры. Под конкретные квартиры. С конкретным бюджетом и мебелью из доступных поставок</h5>
     </div>
-    <SliderComp class="slider"/>
+    <SliderComp :image-urls="customImages" class="slider"/>
   </div>
 </template>
 
 <script>
 import B2bHeaderComp from '../main/B2bHeaderComp.vue';
 import SliderComp from '../main/SliderComp.vue';
+
+import Slider1 from '../../assets/slider1.jpg'
+import Slider2 from '../../assets/slider2.png'
+import Slider3 from '../../assets/slider3.png'
+
 export default {
   name: "B2BHeader",
+  data() {
+    return {
+      customImages: [
+        Slider1,
+        Slider2,
+        Slider3
+      ]
+    };
+  },
   components: {
     B2bHeaderComp,
     SliderComp
@@ -69,5 +83,27 @@ export default {
     border-radius: 24px;
     background: #F5F5F5;
     padding: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main__content {
+    flex-direction: column;
+  }
+
+  .text__wrapper {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .main__text__container {
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .slider {
+    width: 100%;
+  }
 }
 </style>

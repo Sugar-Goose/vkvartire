@@ -110,6 +110,10 @@ body {
     font-size: 18px;
   }
 
+  h2 {
+    font-size: 32px;
+  }
+
   h4 {
     font-size: 32px;
   }
@@ -119,8 +123,8 @@ body {
     font-weight: 600;
   }
 
-  h2 {
-    font-size: 32px;
+  h6 {
+    font-size: 24px;
   }
 }
 </style>

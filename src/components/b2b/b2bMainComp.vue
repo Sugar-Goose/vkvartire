@@ -75,5 +75,11 @@ export default {
 
 .cardsComp {
     margin-top: 40px;
-} 
+}
+
+@media screen and (max-width: 732px) {
+  .main__header__container {
+    padding: 8px;
+  }
+}
 </style>
