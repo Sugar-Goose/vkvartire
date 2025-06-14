@@ -7,7 +7,7 @@
                     <div class="image__container">
                         <component :is="item.icon" v-if="item.icon" />
                     </div>
-                    <p>{{ item.text }}</p>
+                    <p v-html="item.text"></p>
                 </div>
             </div>
         </div>

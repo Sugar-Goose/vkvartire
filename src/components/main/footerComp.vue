@@ -10,7 +10,7 @@
         <div class="cta__wrapper">
             <div class="cta__text__wrapper">
                 <h6>{{ ctaTitle }}</h6>
-                <p class="text_lg_regular">{{ ctaDescription }}</p>
+                <p class="text_lg_regular" v-html="ctaDescription"></p>
             </div>
             <a href="#" class="cta__button text_lg_meduim">{{ buttonText }}</a>
         </div>
@@ -67,6 +67,7 @@ export default {
     position: absolute;
     top: 0;
     z-index: 0;
+    min-height: 100%;
 }
 
 .text__wrapper {
